@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <h3>input</h3>
+    <input id="myInput1" type="text" />
+    <button onclick="count()">See output</button>
+
+    <p id="output1"></p>
+
+    <script>
+      function count() {
+        var string = document.getElementById("myInput1").value;
+        let counts = string.split("").reduce((a, letter) => {
+          a[letter] = (a[letter] || 0) + 1;
+          return a;
+        }, {});
+        document.getElementById("output1").innerHTML = JSON.stringify(counts);
+      }
+    </script>
+  </body>
+</html>
